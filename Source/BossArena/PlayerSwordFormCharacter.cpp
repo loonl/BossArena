@@ -25,6 +25,9 @@ APlayerSwordFormCharacter::APlayerSwordFormCharacter()
 	// Controller Rotation 관련 설정
 	InitControllerRotation();
 
+	// test code
+	//GetWorld()->GetFirstPlayerController()->Possess(this);
+
 }
 
 void APlayerSwordFormCharacter::PostInitializeComponents()
@@ -66,6 +69,7 @@ void APlayerSwordFormCharacter::SetupPlayerInputComponent(UInputComponent* Playe
 
 	// 카메라 움직임 바인딩
 	PlayerInputComponent->BindAxis("Yaw", this, &APlayerSwordFormCharacter::Yaw);
+	PlayerInputComponent->BindAxis("Pitch", this, &APlayerSwordFormCharacter::Pitch);
 }
 
 void APlayerSwordFormCharacter::MoveForward(float value)
@@ -86,6 +90,12 @@ void APlayerSwordFormCharacter::Yaw(float value)
 {
 	// TODO - Null Check
 	AddControllerYawInput(value);
+}
+
+void APlayerSwordFormCharacter::Pitch(float value)
+{
+	// TODO - Null Check
+	AddControllerPitchInput(value);
 }
 
 
@@ -122,6 +132,10 @@ void APlayerSwordFormCharacter::InitControllerRotation()
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationRoll = false;
 	bUseControllerRotationYaw = true;
+
+	// test code
+	springArm->bUsePawnControlRotation = true;
+	camera->bUsePawnControlRotation = false;
 }
 
 
