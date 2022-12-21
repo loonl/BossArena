@@ -36,6 +36,8 @@ public:
 	void MoveForward(float value);
 	void MoveRight(float value);
 	void Yaw(float value);
+	void Pitch(float value);
+
 
 	// ------------------------------------------------------
 	// Movement 관련 변수

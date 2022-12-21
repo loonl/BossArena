@@ -2,15 +2,10 @@
 
 
 #include "BossArenaGameModeBase.h"
-#include "Boss1.h"
+#include "PlayerSwordFormCharacter.h"
 
 ABossArenaGameModeBase::ABossArenaGameModeBase()
 {
-	static ConstructorHelpers::FClassFinder<ACharacter> BP_Char(TEXT("Blueprint'/Game/Blueprints/BP_TempCharacter.BP_TempCharacter_C'"));
-
-	if (BP_Char.Succeeded())
-	{
-		DefaultPawnClass = BP_Char.Class;
-	}
-
+	// 디폴트 클래스 지정
+	DefaultPawnClass = APlayerSwordFormCharacter::StaticClass();
 }
