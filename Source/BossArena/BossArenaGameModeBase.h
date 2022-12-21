@@ -13,5 +13,7 @@ UCLASS()
 class BOSSARENA_API ABossArenaGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+
+	ABossArenaGameModeBase();
 	
 };
