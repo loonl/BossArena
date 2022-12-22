@@ -2,10 +2,12 @@
 
 
 #include "BossArenaGameModeBase.h"
+#include "PlayerCustomController.h"
 #include "PlayerSwordFormCharacter.h"
 
 ABossArenaGameModeBase::ABossArenaGameModeBase()
 {
 	// 디폴트 클래스 지정
 	DefaultPawnClass = APlayerSwordFormCharacter::StaticClass();
+	PlayerControllerClass = APlayerCustomController::StaticClass();
 }

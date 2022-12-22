@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "PlayerSwordFormAnimInstance.h"
-#include "PlayerSwordFormCharacter.h"
+#include "PlayerCharacterBase.h"
 #include "GameFramework/PawnMovementComponent.h"
 
 UPlayerSwordFormAnimInstance::UPlayerSwordFormAnimInstance()
@@ -19,13 +19,15 @@ void UPlayerSwordFormAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 		speed = pawn->GetVelocity().Size();
 
 		// Pawn을 PlayerSwordCharacter로 형변환
-		auto character = Cast<APlayerSwordFormCharacter>(pawn);
+		auto character = Cast<APlayerCharacterBase>(pawn);
 		if (character)
 		{
 			isFalling = character->GetMovementComponent()->IsFalling();
 
-			vertical = character->verticalValue;
-			horizontal = character->horizontalValue;
+			horizontal = character->GetHorizontalValue();
+			vertical = character->GetVerticalValue();
+
+			UE_LOG(LogTemp, Warning, TEXT("Vertical Value : %f"), vertical);
 		}
 	}
 }
