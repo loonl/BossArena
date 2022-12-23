@@ -103,12 +103,14 @@ void APlayerCustomController::Pitch(float value)
 // Custom Camera Class (Blueprint) 연결
 void APlayerCustomController::InitCameraClass()
 {
+	/**
 	// TODO - 여기 픽스 필요 :: 찾아오지 못함
 	static ConstructorHelpers::FObjectFinder<APlayerCameraManager> CM(TEXT("/Game/Player/Blueprints/BP_PlayerCamera.BP_PlayerCamera"));
 	if (CM.Succeeded())
 	{
 		PlayerCameraManager = CM.Object;
 	}
+	*/
 }
 
 
