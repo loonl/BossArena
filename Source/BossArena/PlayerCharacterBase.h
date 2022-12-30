@@ -31,6 +31,7 @@ protected:
 	virtual void InitMesh();
 	void InitArmandCamera();
 	void InitRotationSettings();
+	void InitBindComponent();
 
 
 	// ------------------------------------------------------
@@ -52,10 +53,17 @@ public:
 	void SetHorizontalValue(float value);
 	void SetVerticalValue(float value);
 
+
+	// ------------------------------------------------------
+	// private º¯¼ö
+	// ------------------------------------------------------
 private:
 	UPROPERTY(VisibleAnywhere)
 		class USpringArmComponent* springArm;
 
 	UPROPERTY(VisibleAnywhere)
 		class UCameraComponent* camera;
+
+	UPROPERTY(VisibleAnywhere)
+	class UPlayerCharacterBaseStatComponent* statComp;
 };

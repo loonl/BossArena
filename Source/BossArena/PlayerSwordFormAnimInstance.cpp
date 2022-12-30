@@ -26,8 +26,6 @@ void UPlayerSwordFormAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 
 			horizontal = character->GetHorizontalValue();
 			vertical = character->GetVerticalValue();
-
-			UE_LOG(LogTemp, Warning, TEXT("Vertical Value : %f"), vertical);
 		}
 	}
 }

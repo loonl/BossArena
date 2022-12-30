@@ -4,6 +4,7 @@
 #include "PlayerCharacterBase.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "PlayerCharacterBaseStatComponent.h"
 #include "Components/CapsuleComponent.h"
 
 
@@ -22,6 +23,9 @@ APlayerCharacterBase::APlayerCharacterBase()
 
 	// Rotation 설정 관련 Init
 	InitRotationSettings();
+
+	// Component 관련 Init
+	InitBindComponent();
 }
 
 // Called when the game starts or when spawned
@@ -76,6 +80,12 @@ void APlayerCharacterBase::InitRotationSettings()
 
 	springArm->bUsePawnControlRotation = true;
 	camera->bUsePawnControlRotation = false;
+}
+
+// Component 바인드 관련 Init
+void APlayerCharacterBase::InitBindComponent()
+{
+	statComp = CreateDefaultSubobject<UPlayerCharacterBaseStatComponent>(TEXT("Stat"));
 }
 
 // Mesh 관련 Init
