@@ -59,6 +59,9 @@ void APlayerCustomController::SetupInputComponent()
 	// 카메라 움직임 바인딩
 	InputComponent->BindAxis("Yaw", this, &APlayerCustomController::Yaw);
 	InputComponent->BindAxis("Pitch", this, &APlayerCustomController::Pitch);
+
+	// test - 플레이어 데미지 받는 것 디버그
+	InputComponent->BindAction("GetDamaged", IE_Pressed, this, &APlayerCustomController::GetDamaged);
 }
 
 void APlayerCustomController::Jump()
@@ -125,4 +128,15 @@ void APlayerCustomController::OnPossess(APawn* InPawn)
 void APlayerCustomController::OnUnPossess()
 {
 	Super::OnUnPossess();
+}
+
+
+// test
+void APlayerCustomController::GetDamaged()
+{
+	auto character = Cast<APlayerCharacterBase>(GetPawn());
+	if (character)
+	{
+		character->GetDamaged(40);
+	}
 }

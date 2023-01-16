@@ -45,6 +45,9 @@ public:
 	void Yaw(float value);
 	void Pitch(float value);
 
+	// test
+	void GetDamaged();
+
 	// ------------------------------------------------------
 	// private 일반 함수
 	// ------------------------------------------------------

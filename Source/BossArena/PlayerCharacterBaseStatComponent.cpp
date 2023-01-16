@@ -76,6 +76,7 @@ void UPlayerCharacterBaseStatComponent::SetMaxHP(int32 value)
 void UPlayerCharacterBaseStatComponent::SetCurHP(int32 value)
 {
 	stat.currentHP = value;
+	OnHpChanged.Broadcast();
 }
 
 void UPlayerCharacterBaseStatComponent::SetAttack(int32 value)

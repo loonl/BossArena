@@ -3,9 +3,16 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "PlayerCustomController.h"
 #include "Components/ActorComponent.h"
 #include "Engine/DataTable.h"
 #include "PlayerCharacterBaseStatComponent.generated.h"
+
+// ------------------------------------------------------
+// Delegate 선언
+// ------------------------------------------------------
+DECLARE_MULTICAST_DELEGATE(FOnHpChanged);
+
 
 // ------------------------------------------------------
 // Player Stat 담는 구조체
@@ -30,7 +37,8 @@ public:
 		float speed;
 };
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+
+UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
 class BOSSARENA_API UPlayerCharacterBaseStatComponent : public UActorComponent
 {
 	GENERATED_BODY()
@@ -71,5 +79,11 @@ public:
 	void SetCurHP(int32 value);
 	void SetAttack(int32 value);
 	void SetSpeed(float value);
+
+	// Delegate
+public:
+
+	// HP 변경시 호출되는 델리게이트
+	FOnHpChanged OnHpChanged;
 
 };

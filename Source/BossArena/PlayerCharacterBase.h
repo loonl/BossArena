@@ -53,6 +53,9 @@ public:
 	void SetHorizontalValue(float value);
 	void SetVerticalValue(float value);
 
+	// test
+	void GetDamaged(int32 damage);
+
 
 	// ------------------------------------------------------
 	// private º¯¼ö

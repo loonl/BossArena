@@ -119,3 +119,11 @@ void APlayerCharacterBase::SetVerticalValue(float value)
 {
 	verticalValue = value;
 }
+
+
+// test
+void APlayerCharacterBase::GetDamaged(int32 damage)
+{
+	statComp->SetCurHP(statComp->GetCurHP() - damage);
+	UE_LOG(LogTemp, Warning, TEXT("Current HP : %d"), statComp->GetCurHP());
+}
