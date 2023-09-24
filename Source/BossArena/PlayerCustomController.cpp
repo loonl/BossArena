@@ -12,9 +12,6 @@ APlayerCustomController::APlayerCustomController()
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
-	// SpringArm & Camera 세팅
-	InitCameraClass();
 }
 
 void APlayerCustomController::BeginPlay()
@@ -29,8 +26,6 @@ void APlayerCustomController::PostInitializeComponents()
 	// test - Possess test 
 	// Player 연결
 }
-
-
 
 
 // ------------------------------------------------------
@@ -102,20 +97,6 @@ void APlayerCustomController::Pitch(float value)
 {
 	AddPitchInput(value);
 }
-
-// Custom Camera Class (Blueprint) 연결
-void APlayerCustomController::InitCameraClass()
-{
-	/**
-	// TODO - 여기 픽스 필요 :: 찾아오지 못함
-	static ConstructorHelpers::FObjectFinder<APlayerCameraManager> CM(TEXT("/Game/Player/Blueprints/BP_PlayerCamera.BP_PlayerCamera"));
-	if (CM.Succeeded())
-	{
-		PlayerCameraManager = CM.Object;
-	}
-	*/
-}
-
 
 // ------------------------------------------------------
 // Possess 함수
